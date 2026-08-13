@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>To-Do List — Frontend Lab</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="todo" aria-label="Lista de tarefas">
+    <h1 class="todo__title">✅ To-Do List</h1>
+
+    <form class="todo__form" id="form">
+      <input
+        class="todo__input"
+        id="input"
+        type="text"
+        placeholder="Adicionar nova tarefa..."
+        maxlength="120"
+        autocomplete="off"
+        required
+      />
+      <button class="todo__add" type="submit">Adicionar</button>
+    </form>
+
+    <p class="todo__counter" id="counter" role="status">0 tarefas</p>
+
+    <ul class="todo__list" id="list"></ul>
+
+    <div class="todo__footer">
+      <button class="todo__link" id="clear-done" type="button">Limpar concluídas</button>
+      <button class="todo__link todo__link--danger" id="clear-all" type="button">Limpar tudo</button>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

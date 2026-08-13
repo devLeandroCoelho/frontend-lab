@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #052e16, #14532d);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  padding: 16px;
+}
+
+.stopwatch {
+  width: 100%;
+  max-width: 360px;
+  background: #14532d;
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.stopwatch__title {
+  color: #86efac;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 16px;
+}
+
+.stopwatch__display {
+  background: #052e16;
+  color: #f0fdf4;
+  font-size: 3rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+  padding: 24px 16px;
+  border-radius: 16px;
+  margin-bottom: 20px;
+  letter-spacing: 0.04em;
+}
+
+.stopwatch__controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.stopwatch__btn {
+  background: #166534;
+  color: #f0fdf4;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 14px 0;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.05s ease;
+}
+
+.stopwatch__btn:hover:not(:disabled) {
+  background: #15803d;
+}
+
+.stopwatch__btn:active:not(:disabled) {
+  transform: scale(0.96);
+}
+
+.stopwatch__btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.stopwatch__btn:focus-visible {
+  outline: 2px solid #4ade80;
+  outline-offset: 2px;
+}
+
+.stopwatch__btn--primary {
+  background: #22c55e;
+  color: #052e16;
+}
+
+.stopwatch__btn--primary:hover:not(:disabled) {
+  background: #4ade80;
+}
+
+.stopwatch__btn--lap {
+  grid-column: span 2;
+}
+
+.stopwatch__laps {
+  list-style: none;
+  max-height: 200px;
+  overflow-y: auto;
+  border-top: 1px solid #166534;
+}
+
+.stopwatch__laps li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 6px;
+  color: #bbf7d0;
+  font-variant-numeric: tabular-nums;
+  font-size: 0.95rem;
+  border-bottom: 1px solid #16653455;
+}
+
+.stopwatch__laps li span:first-child {
+  color: #86efac;
+  font-weight: 600;
+}
+
+@media (max-width: 360px) {
+  .stopwatch__display {
+    font-size: 2.3rem;
+  }
+}

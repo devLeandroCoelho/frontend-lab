@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conversor de Moeda — Frontend Lab</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="converter" aria-label="Conversor de moeda">
+    <h1 class="converter__title">💱 Conversor de Moeda</h1>
+
+    <form class="converter__form" id="form">
+      <label class="converter__field">
+        <span>Valor</span>
+        <input
+          id="amount"
+          type="number"
+          inputmode="decimal"
+          min="0"
+          step="0.01"
+          placeholder="0,00"
+          required
+        />
+      </label>
+
+      <div class="converter__pair">
+        <label class="converter__field">
+          <span>De</span>
+          <select id="from">
+            <option value="BRL" selected>BRL — Real</option>
+            <option value="USD">USD — Dólar</option>
+            <option value="EUR">EUR — Euro</option>
+            <option value="GBP">GBP — Libra</option>
+          </select>
+        </label>
+
+        <button class="converter__swap" id="swap" type="button" aria-label="Inverter moedas">⇄</button>
+
+        <label class="converter__field">
+          <span>Para</span>
+          <select id="to">
+            <option value="BRL">BRL — Real</option>
+            <option value="USD" selected>USD — Dólar</option>
+            <option value="EUR">EUR — Euro</option>
+            <option value="GBP">GBP — Libra</option>
+          </select>
+        </label>
+      </div>
+
+      <button class="converter__submit" type="submit">Converter</button>
+    </form>
+
+    <div class="converter__result" id="result" role="status" aria-live="polite">
+      <span class="converter__result-value" id="result-value">—</span>
+      <span class="converter__result-rate" id="result-rate"></span>
+    </div>
+
+    <p class="converter__note">Taxas de exemplo (offline) — consulte uma API de câmbio para valores reais.</p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

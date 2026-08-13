@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cronômetro — Frontend Lab</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="stopwatch" aria-label="Cronômetro">
+    <h1 class="stopwatch__title">⏱️ Cronômetro</h1>
+
+    <div class="stopwatch__display" id="display" role="timer" aria-live="polite">00:00:00</div>
+
+    <div class="stopwatch__controls">
+      <button class="stopwatch__btn stopwatch__btn--primary" id="btn-start">Iniciar</button>
+      <button class="stopwatch__btn" id="btn-pause" disabled>Pausar</button>
+      <button class="stopwatch__btn" id="btn-reset">Resetar</button>
+      <button class="stopwatch__btn stopwatch__btn--lap" id="btn-lap" disabled>Volta</button>
+    </div>
+
+    <ul class="stopwatch__laps" id="laps" aria-label="Voltas marcadas"></ul>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

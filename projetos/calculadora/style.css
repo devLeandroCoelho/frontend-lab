@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  padding: 16px;
+}
+
+.calc {
+  width: 100%;
+  max-width: 320px;
+  background: #1e293b;
+  border-radius: 24px;
+  padding: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.calc__title {
+  color: #94a3b8;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.calc__display {
+  background: #0f172a;
+  color: #f8fafc;
+  font-size: 2.6rem;
+  font-weight: 600;
+  text-align: right;
+  padding: 18px 16px;
+  border-radius: 16px;
+  margin-bottom: 16px;
+  min-height: 88px;
+  overflow-wrap: break-word;
+  overflow: hidden;
+}
+
+.calc__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.calc__btn {
+  background: #334155;
+  color: #f8fafc;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.35rem;
+  font-weight: 500;
+  padding: 16px 0;
+  cursor: pointer;
+  transition: transform 0.05s ease, background 0.15s ease;
+}
+
+.calc__btn:hover {
+  background: #475569;
+}
+
+.calc__btn:active {
+  transform: scale(0.94);
+}
+
+.calc__btn:focus-visible {
+  outline: 2px solid #38bdf8;
+  outline-offset: 2px;
+}
+
+.calc__btn--fn {
+  background: #475569;
+  color: #e2e8f0;
+}
+
+.calc__btn--op {
+  background: #0ea5e9;
+  color: #0f172a;
+}
+
+.calc__btn--op:hover {
+  background: #38bdf8;
+}
+
+.calc__btn--equals {
+  background: #f59e0b;
+  color: #0f172a;
+}
+
+.calc__btn--equals:hover {
+  background: #fbbf24;
+}
+
+.calc__btn--zero {
+  grid-column: span 2;
+}
+
+.calc__hint {
+  margin-top: 14px;
+  color: #64748b;
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+@media (max-width: 360px) {
+  .calc {
+    padding: 14px;
+  }
+  .calc__btn {
+    font-size: 1.1rem;
+    padding: 13px 0;
+  }
+}
