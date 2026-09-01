@@ -14,6 +14,7 @@ sem dependências externas.
 | [⏱️ Cronômetro](./projetos/cronometro/) | Cronômetro com iniciar, pausar e resetar | ✅ pronto |
 | [✅ To-Do List](./projetos/todo-list/) | Lista de tarefas com persistência (localStorage) | ✅ pronto |
 | [💱 Conversor de Moeda](./projetos/conversor-moeda/) | Conversor de moedas (taxas de exemplo) | ✅ pronto |
+| [⏳ Contador Regressivo](./projetos/contador-regressivo/) | Contador com progresso, som e acessibilidade WCAG AA | ✅ pronto |
 
 ## 🚀 Como rodar
 
@@ -36,7 +37,8 @@ frontend-lab/
 │   ├── calculadora/      # operações básicas
 │   ├── cronometro/       # tempo + voltas
 │   ├── todo-list/        # tarefas + localStorage
-│   └── conversor-moeda/  # conversão BRL ↔ USD/EUR
+│   ├── conversor-moeda/  # conversão BRL ↔ USD/EUR
+│   └── contador-regressivo/  # contador acessível + som
 └── README.md             # este índice
 ```
 
