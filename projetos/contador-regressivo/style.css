@@ -1,0 +1,257 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  padding: 16px;
+  color: #f8fafc;
+}
+
+.countdown {
+  width: 100%;
+  max-width: 400px;
+  background: #0f172a;
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.countdown__title {
+  color: #fbbf24;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+
+.countdown__subtitle {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* ---- Formulário de configuração ---- */
+
+.countdown__setup {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 12px;
+  margin-bottom: 20px;
+}
+
+.countdown__label {
+  display: flex;
+  align-items: center;
+  color: #94a3b8;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.countdown__input {
+  width: 100%;
+  background: #1e293b;
+  color: #f8fafc;
+  border: 2px solid #334155;
+  border-radius: 12px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  padding: 12px;
+  text-align: center;
+}
+
+.countdown__input:focus-visible {
+  outline: 2px solid #fbbf24;
+  outline-offset: 2px;
+  border-color: #fbbf24;
+}
+
+.countdown__btn--set {
+  grid-column: 1 / -1;
+  height: 48px;
+  margin-top: 4px;
+}
+
+/* ---- Card do contador ---- */
+
+.countdown__card {
+  background: #1e293b;
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.countdown__display {
+  display: block;
+  background: #0f172a;
+  color: #fbbf24;
+  font-size: 3.2rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+  padding: 20px 16px;
+  border-radius: 14px;
+  margin-bottom: 16px;
+  letter-spacing: 0.05em;
+  line-height: 1.1;
+}
+
+.countdown__display[aria-busy="true"] {
+  animation: pulse 1s ease-in-out infinite;
+}
+
+.countdown__progress {
+  height: 10px;
+  background: #334155;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.countdown__progress-fill {
+  height: 100%;
+  width: 0%;
+  background: #fbbf24;
+  border-radius: 999px;
+  transition: width 0.2s linear;
+}
+
+.countdown__controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+/* ---- Botões ---- */
+
+.countdown__btn {
+  min-height: 48px; /* alvo de toque ≥ 44px (WCAG 2.5.5) */
+  background: #334155;
+  color: #f8fafc;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.05s ease;
+}
+
+.countdown__btn:hover:not(:disabled) {
+  background: #475569;
+}
+
+.countdown__btn:active:not(:disabled) {
+  transform: scale(0.96);
+}
+
+.countdown__btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.countdown__btn:focus-visible {
+  outline: 2px solid #fbbf24;
+  outline-offset: 2px;
+}
+
+.countdown__btn--start {
+  background: #fbbf24;
+  color: #1e293b;
+}
+
+.countdown__btn--start:hover:not(:disabled) {
+  background: #fcd34d;
+}
+
+.countdown__btn--set {
+  grid-column: 1 / -1;
+  background: #fbbf24;
+  color: #1e293b;
+}
+
+.countdown__btn--set:hover:not(:disabled) {
+  background: #fcd34d;
+}
+
+/* ---- Som ---- */
+
+.countdown__sound {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  cursor: pointer;
+  min-height: 44px;
+}
+
+.countdown__sound input {
+  width: 18px;
+  height: 18px;
+  accent-color: #fbbf24;
+}
+
+.countdown__sound input:focus-visible {
+  outline: 2px solid #fbbf24;
+  outline-offset: 2px;
+}
+
+/* ---- Status (live region) ---- */
+
+.countdown__status {
+  min-height: 1.5em;
+  margin-top: 14px;
+  color: #fbbf24;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.countdown__status[hidden] {
+  display: none;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.55; }
+}
+
+/* Usuários sensíveis a movimento: sem animação */
+@media (prefers-reduced-motion: reduce) {
+  .countdown__display[aria-busy="true"] {
+    animation: none;
+  }
+
+  .countdown__progress-fill {
+    transition: none;
+  }
+
+  * {
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .countdown__display {
+    font-size: 2.4rem;
+  }
+
+  .countdown {
+    padding: 16px;
+  }
+}

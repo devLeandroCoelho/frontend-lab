@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contador Regressivo — Frontend Lab</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="countdown" aria-label="Contador regressivo">
+    <h1 class="countdown__title">⏳ Contador Regressivo</h1>
+    <p class="countdown__subtitle">Escolha o tempo, dê partida e acompanhe o progresso — aviso sonoro e visual ao concluir.</p>
+
+    <form class="countdown__setup" id="setup">
+      <label class="countdown__label" for="minutes">Minutos</label>
+      <input
+        class="countdown__input"
+        id="minutes"
+        name="minutes"
+        type="number"
+        min="0"
+        max="59"
+        step="1"
+        value="1"
+        inputmode="numeric"
+        autocomplete="off"
+      />
+
+      <label class="countdown__label" for="seconds">Segundos</label>
+      <input
+        class="countdown__input"
+        id="seconds"
+        name="seconds"
+        type="number"
+        min="0"
+        max="59"
+        step="1"
+        value="0"
+        inputmode="numeric"
+        autocomplete="off"
+      />
+
+      <button class="countdown__btn countdown__btn--primary countdown__btn--set" type="submit">Definir</button>
+
+      <label class="countdown__sound">
+        <input type="checkbox" id="sound" checked />
+        <span>Som ao terminar</span>
+      </label>
+    </form>
+
+    <div class="countdown__card">
+      <output id="display" class="countdown__display" role="timer" aria-live="polite" aria-label="Tempo restante">01:00</output>
+
+      <div id="progress" class="countdown__progress" role="progressbar" aria-label="Progresso do contador" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <div id="progress-fill" class="countdown__progress-fill"></div>
+      </div>
+
+      <div class="countdown__controls">
+        <button class="countdown__btn countdown__btn--start" id="btn-start">Iniciar</button>
+        <button class="countdown__btn" id="btn-pause" disabled>Pausar</button>
+        <button class="countdown__btn" id="btn-reset">Resetar</button>
+      </div>
+    </div>
+
+    <p id="status" class="countdown__status" role="status" aria-live="polite"></p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
